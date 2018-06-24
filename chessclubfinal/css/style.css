@@ -1,0 +1,143 @@
+/* FONT FACE */
+@font-face {
+	font-family: "RobotoCondensed-Bold";
+	src: url("../fonts/RobotoCondensed-Bold.ttf");
+}
+
+/*GLOBAL */
+html {font-size: 62.5%}
+body {
+	font-family: "Open Sans", Arial, sans-serif;
+	background-color: #F2F2F2;
+	color: #666;
+	font-size: 1.6rem;
+}
+img {
+	max-width: 100%;
+}
+main, nav{
+	width: 80%;
+	margin: 0 auto;
+}
+header, footer{
+	font-family: "RobotoCondensed-Bold";
+}
+/*Header*/
+header{
+	background-color: black;
+	padding: 40px 0 10px 0;
+}
+nav{
+	background-color: white;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-around;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+}
+nav>a{
+	text-decoration: none;
+	color: black;
+	border-left: 1px black solid;
+	text-align: center;
+	flex: 1;
+	background-color: white;
+	padding: 67px 0;
+	vertical-align: middle;
+	text-transform: uppercase;	
+}
+nav>a:hover{
+	color: #c26a30;
+}
+nav :first-child{
+	padding:0;
+	border: white;
+}
+
+
+/*Footer*/
+footer{
+	color: #ad7c5c;	
+	background-color: #f5ece6;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-around;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+}
+footer>div{
+	flex: 1;
+	text-align: center;
+	padding: 60px;
+}
+.fab{
+	font-size: 5rem;
+}
+
+
+/*Accueil main.accueil*/
+.accueil img{
+	width: 100%;
+}
+/*Blog main.blog*/
+.blog{
+	display: flex;
+}
+.blog .left{
+	width: 60%;
+}
+.blog .right{
+	width: 40%;
+}
+
+
+@media screen and (max-width: 1024px) {
+	main, nav{
+		width: 90%;
+	}
+	/*Header*/
+	nav{
+		font-size: 11px;
+	}
+	/*Footer*/
+	footer{
+		flex-direction: column;
+		
+	}
+	footer>div{
+		padding: 20px;
+	}
+	
+
+	
+}
+
+@media screen and (max-width: 600px) {
+	/*Header*/
+	nav, footer{
+		flex-direction: column;
+	}
+	nav{
+		font-size: 14px;
+	}
+	nav>a{
+		width: 100%;
+		padding: 20px;
+		border: white;
+		border-top: 1px black solid;
+	}
+	/*Footer*/
+	footer>div{
+		padding: 20px;
+	}
+	
+	
+}

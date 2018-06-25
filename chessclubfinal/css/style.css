@@ -9,14 +9,14 @@ html {font-size: 62.5%}
 body {
 	font-family: "Open Sans", Arial, sans-serif;
 	background-color: #F2F2F2;
-	color: #666;
-	font-size: 1.6rem;
+	color: #c26a30;	
+	font-size: 1.2rem;
 }
 img {
 	max-width: 100%;
 }
 main, nav{
-	width: 80%;
+	width: 90%;
 	margin: 0 auto;
 }
 header, footer{
@@ -24,7 +24,8 @@ header, footer{
 }
 /*Header*/
 header{
-	background-color: black;
+	background-color: #1a110c;
+	color: #666;
 	padding: 40px 0 10px 0;
 }
 nav{
@@ -87,17 +88,95 @@ footer>div{
 .accueil img{
 	width: 100%;
 }
+
+
 /*Blog main.blog*/
 .blog{
 	display: flex;
+	color: #c26a30;
 }
 .blog .left{
-	width: 60%;
+	width: 70%;
+	padding-right: 60px;
 }
 .blog .right{
-	width: 40%;
+	width: 30%;
+}
+.blog h2, .recentPostsDate, .recentCommentsDate, .recentPostsReadMore{
+	color: #432d1f;
+}
+.recentPostsReadMore{
+	text-transform: uppercase;
+	border-bottom: #432d1f 1px solid;	
+}
+.recentPostsBody{
+	padding-bottom: 20px;
+}
+.postsListInfo{
+	margin: 20px 0;
+}
+.postsList, .recentPostsList{
+	margin-bottom: 70px;
+}
+.postsList>p{
+	padding: 20px 0;
 }
 
+.fas{
+	padding: 10px 40px 10px 0;
+}
+.recentCommentsTop{
+	display: flex;
+}
+.recentCommentsLeft{
+	width: 30%;
+}
+.recentCommentsRight{
+	width: 70%;
+}
+.recentCommentsBodyShort{
+	color: #c26a30;
+}
+/*One Post main.onePost comments*/
+.writtenBy{
+	border: 1px solid #dbdbdb;
+	padding: 0 30px;
+}
+.writtenBy h3{
+	color: #432d1f;
+}
+.brownLight{
+	color: #c26a30;
+}
+.writtenByTop{
+	display: flex;
+}
+.writtenByTopLeft{
+	width: 30%;
+	padding: 30px;
+}
+.writtenByTopRight{
+	width: 70%;
+}
+
+.formLeaveComment{
+	padding: 60px 0;
+}
+.formLeaveComment input, .formLeaveComment textarea{
+	width:100%;
+	margin: 5px 0;
+	padding: 5px;
+	border: none;
+	border: 1px solid #dbdbdb;
+	color: #c26a30;
+}
+.submitComment{
+	border: none;
+	text-transform: uppercase;
+	border-bottom: #432d1f 1px solid;
+	color: #432d1f;
+
+}
 
 @media screen and (max-width: 1024px) {
 	main, nav{

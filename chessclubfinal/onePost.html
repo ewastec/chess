@@ -17,7 +17,7 @@
 </head>
 <body>
     <header>        
-        <nav >
+        <nav class="container">
             <a href=""><img src="images/logo.png" alt=""></a>
             <a href="">Accueil</a>
             <a href="">About Us</a>
@@ -28,18 +28,18 @@
     </header>
 
 
-    <main class="blog onePost">
-        <div class="left">
+    <main class="container blog onePost">
+        <section class="blogLeft">
 
-            <div class="postsList">
-                <h2>Lorem ipsum title here</h2>
+            <article class="postsList oneArticle">
+                <h1>Lorem ipsum title here</h1>
                 <img src="images/echec002.jpeg" alt="">
                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea commodi dicta voluptate excepturi est quia quasi cumque, architecto, similique, ullam recusandae eos praesentium repellat fugit dignissimos quos eligendi dolor fuga! Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum sunt esse ipsum rerum ea? Quos repudiandae id voluptas hic error ducimus dicta amet, mollitia aliquid, est modi architecto, dolorem alias? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas nostrum voluptas sint non quis obcaecati tenetur culpa corrupti aliquam enim totam saepe maxime adipisci aperiam eveniet, error optio omnis facere? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam delectus laborum cupiditate officiis. Blanditiis culpa deleniti doloribus dolorem itaque, sapiente minus nesciunt accusamus architecto officia animi minima eaque a quia. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur dignissimos consequuntur quo ratione veniam tempora culpa ut quis dicta, obcaecati esse eum minus alias. Esse temporibus dignissimos ex non possimus. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem, dignissimos rerum. Perferendis minus dolore itaque molestiae qui quod dolor porro quaerat, tempore adipisci quo sit ducimus vitae sed. Magnam, accusamus? Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum earum necessitatibus consequuntur corrupti commodi doloremque eveniet rerum vel doloribus. Dolor voluptas neque saepe rerum voluptates quod obcaecati fugiat magni? Cum! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit explicabo facilis delectus aut magnam! Pariatur reprehenderit expedita quidem ducimus aut unde tenetur inventore officiis veniam rem magni, dicta incidunt corrupti? Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium nulla debitis et quam libero laudantium, quas omnis sunt, fugit quae, velit adipisci officiis distinctio perferendis vero reprehenderit voluptatum! Beatae, placeat. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Enim, non iste excepturi fugit soluta aperiam, pariatur atque nam vitae ipsum iure ex culpa alias perferendis asperiores dicta repudiandae eligendi commodi!</p>
                 <div class="postsListInfo">
                         <i class="fas fa-calendar-alt">
-                                <span class="recentPostsDate">
-                                        <b> July 25, 2015</b> 
-                                </span>
+                            <span class="recentPostsDate">
+                                <b> July 25, 2015</b> 
+                            </span>
                         </i>
                         <i class="fas fa-user">
                             John Smith
@@ -50,9 +50,36 @@
                         <i class="fas fa-thumbs-up"> 0 </i>
                         <i class="fas fa-thumbs-down"> 0 </i>
                 </div>
-            </div>
+            </article>
 
-            <div class="writtenBy">
+            <article class="postPhotoGalery">
+                <h3>Photo Galery</h3>
+                <div class="postPhotoGaleryAll">
+                    <img class="postPhotoGaleryOne" src="images/logo.png" alt="">
+                    <img class="postPhotoGaleryOne" src="images/echec004.jpeg" alt="">
+                    <img class="postPhotoGaleryOne" src="images/echec002.jpeg" alt="">
+                    <img class="postPhotoGaleryOne" src="images/Logo.jpg" alt="">
+                    <img class="postPhotoGaleryOne" src="images/cinematheque.jpg" alt="">
+                    
+                </div>                   
+            </article>
+
+            <article class="postVideoGalery">
+                <h3>Video Galery</h3>
+                <div class="postVideoGaleryAll">
+                    <video class="postVideoGaleryOne" controls src="video/video.webm">
+                        Votre navigateur ne peut pas lire cette vidéo
+                    </video> 
+                    <video class="postVideoGaleryOne" controls src="video/video.webm">
+                        Votre navigateur ne peut pas lire cette vidéo
+                    </video> 
+                    <video class="postVideoGaleryOne" controls src="video/video.webm">
+                        Votre navigateur ne peut pas lire cette vidéo
+                    </video>                   
+                </div>                   
+            </article>
+
+            <article class="writtenBy">
                 <h3>Written by <span class="brownLight">John Smith</span></h3>
                 <div class="writtenByTop">
                     <div class="writtenByTopLeft">
@@ -62,7 +89,43 @@
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id cupiditate sit cumque obcaecati? Ipsa maxime nam eius, expedita repellat quaerat modi tenetur doloribus quisquam magni odio cumque. Error, aut vero?</p>
                     </div>
                 </div>                   
-            </div>
+            </article>
+
+            <article class="writtenComments">
+                <h2>Comments</h2>
+                <div class="writtenCommentsAll">
+                    <div class="writtenCommentOne">
+                        <div class="writtenCommentOneBody">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id cupiditate sit cumque obcaecati? Ipsa maxime nam eius, expedita repellat quaerat modi tenetur doloribus quisquam magni odio cumque. Error, aut vero?</p>
+                        </div>
+                        <div class="writtenCommentOneUsername">                            
+                            <i class="fas fa-calendar-alt">
+                                <span class="recentPostsDate">
+                                    <b> July 25, 2015</b> 
+                                </span>
+                            </i>
+                            <i class="fas fa-user">
+                                John Smith
+                            </i> <br>
+                        </div>                        
+                    </div>
+                    <div class="writtenCommentOne">
+                        <div class="writtenCommentOneBody">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id cupiditate sit cumque obcaecati? Ipsa maxime nam eius, expedita repellat quaerat modi tenetur doloribus quisquam magni odio cumque. Error, aut vero?</p>
+                        </div>
+                        <div class="writtenCommentOneUsername">                            
+                            <i class="fas fa-calendar-alt">
+                                <span class="recentPostsDate">
+                                    <b> July 25, 2015</b> 
+                                </span>
+                            </i>
+                            <i class="fas fa-user">
+                                John Smith
+                            </i> <br>
+                        </div>                        
+                    </div>
+                </div>                   
+            </article>
 
             <div class="formLeaveComment">
                 <h2>Leave a comment</h2>
@@ -81,9 +144,9 @@
                     </div>
                 </form>
             </div>
-        </div>
+        </section>
 
-        <aside class="right">
+        <aside class="blogRight">
             <div class="recentPostsList">
                 <h2>Recent Posts</h2>
                 <div class="recentPosts">
@@ -136,7 +199,7 @@
 
 
 
-    <footer class="flex">
+    <footer>
         <div>
             Cavalier de l’Espérance <br>
             Cercle d’échecs J.J PAUR <br>

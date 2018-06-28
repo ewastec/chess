@@ -1,0 +1,55 @@
+<main class="container login">
+    <section class="loginLeft">
+        <div class="formLeaveComment">
+            <h2>Login</h2>
+            <form action="" method="POST">
+                <div>
+                    <input type="email" name="email" placeholder="Email*">
+                </div>
+                <div>
+                    <input type="password" name="password" placeholder="Password*">
+                </div>
+                <div>
+                    <input type="submit" class="SubmitComment" value="Login User">
+                </div>
+            </form>
+        </div>
+    </section>
+    <section class="loginRight">
+        <div class="formLeaveComment">
+            <div class="message">
+                <?php if(isset($message)): ?>
+                <?= $message;?>
+                <?php endif; ?>
+            </div>
+            <h2>Register</h2>
+            <form action="" method="POST" enctype="multipart/form-data">
+                <div>
+                    <input type="text" name="firstName" placeholder="First Name*">
+                </div>
+                <div>
+                    <input type="text" name="lastName" placeholder="Last Name*">
+                </div>
+                <div>
+                    <input type="email" name="email" placeholder="Email (will not be published)*">
+                </div>
+                <div>
+                    <input type="tel" name="tel" placeholder="Numer de telephone*">
+                </div>
+                <div>
+                    <input type="password" name="password" placeholder="Password*">
+                </div>
+                <div>
+                    <input type="password" name="password2" placeholder="Reapeat Password*">
+                </div>
+                <div>
+                    <input type="file" name="fileToUpload" id="fileToUpload">
+                </div>
+                <div>
+                    <input type="submit" class="SubmitComment" value="Register User">
+                </div>                
+            </form>
+        </div>
+    </section>
+
+</main>

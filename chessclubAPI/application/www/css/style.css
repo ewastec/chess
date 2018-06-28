@@ -1,0 +1,438 @@
+/* FONT FACE */
+@font-face {
+	font-family: "RobotoCondensed-Bold";
+	src: url("../fonts/RobotoCondensed-Bold.ttf");
+}
+
+/*GLOBAL */
+html {font-size: 62.5%}
+body {
+	font-family: "Open Sans", Arial, sans-serif;
+	background-color: #F2F2F2;
+	color: #c26a30;	
+	font-size: 1.2rem;
+}
+img {
+	max-width: 100%;
+}
+.container{
+	width: 90%;
+	margin: 0 auto;
+}
+header, footer{
+	font-family: "RobotoCondensed-Bold";
+}
+h1{font-size: 3.6rem;}
+h2{font-size: 2.8rem;}
+
+h1, 
+h2,
+.recentPostsDate, 
+.recentCommentsDate, 
+.recentPostsReadMore,
+.coursDEOneDate{
+	color: #432d1f;
+}
+/*FLEX */
+nav,
+footer,
+.blog,
+.clubInformation,
+.recentCommentsTop,
+.writtenByTop,
+.contactBottom, 
+.contactFormTop,
+.accueilBottom,
+.OurHistoryOne,
+.postPhotoGaleryAll,
+.postVideoGaleryAll,
+.login,
+.lessonBottom,
+.coursDEOne,
+.backend,
+.flex,
+.flexWrap,
+.flexColumn{
+	display: flex;
+}
+
+.postPhotoGaleryAll,
+.postVideoGaleryAll,
+.flexWrap{
+	flex-wrap: wrap;
+}
+.login,
+.accueilBottom,
+.coursDEOne,
+.lessonBottom,
+.backend,
+.spaceBetween{
+	justify-content: space-between;
+}
+/*Header*/
+header{
+	background-color: #1a110c;
+	color: #666;
+	padding: 60px 0 15px 0;
+}
+nav, 
+footer{
+	align-items: center;
+}
+nav{background-color: white;}
+nav>a, 
+footer>div{
+	flex: 1;
+	text-align: center;
+}
+nav>a{
+	text-decoration: none;
+	color: black;
+	border-left: 1px black solid;
+	padding: 55px 0;
+	vertical-align: middle;
+	text-transform: uppercase;	
+}
+nav>a:hover{color: #c26a30;}
+nav :first-child{
+	padding:0;
+	border: white;
+}
+
+/*Footer*/
+footer{
+	color: #ad7c5c;	
+	background-color: #f5ece6;
+	margin-top: 60px;
+}
+footer>div{padding: 60px;}
+.fab{font-size: 5rem;}
+
+/*Justify*/
+.oneArticle,
+.clubInformationDescription,
+.ourHistoryOneDescription,
+.initiation>p,
+.postsList>p{
+	text-align: justify;
+}
+
+
+
+/*Accueil main.accueil*/
+.accueil img{
+	width: 100%;
+}
+.accueilBottomLeft{
+	width: 50%;	
+}
+.accueilBottomRight{
+	width: 40%;
+}
+.clubInformation>h2{
+	flex-basis: 100%;
+}
+.clubInformationImg{
+	width: 35%;
+}
+.clubInformationDescription{
+	width: 60%;
+}
+.clubInformationDescription :first-child,
+.ourHistoryOneDescription :first-child,
+.coursDEOneDescription :first-child{
+	margin: 0;
+}
+.ourHistoryOneDate{
+	padding-right: 20px;
+}
+.clubOfficersOne{
+	width: 46%;
+	border: 1px solid #dbdbdb;
+	margin: 0 20px 20px 0;
+}
+.clubOfficersDescription{
+	padding: 0 20px;
+}
+.usefulLinks>ol{
+	list-style-type: decimal;
+	padding: 20px;
+}
+
+
+/*Blog main.blog*/
+
+.blogLeft{
+	width: 70%;
+	padding-right: 60px;
+}
+.blogRight{
+	width: 30%;
+}
+.recentPostsReadMore{
+	text-transform: uppercase;
+	border-bottom: #432d1f 1px solid;	
+}
+.recentPostsBody{
+	padding-bottom: 20px;
+}
+.postsListInfo{
+	margin: 20px 0;
+}
+.postsList, 
+.recentPostsList{
+	margin-bottom: 70px;
+}
+.postsList>p{
+	padding: 20px 0;
+}
+
+.fas{
+	padding: 10px 40px 10px 0;
+}
+.recentCommentsLeft{
+	width: 30%;
+}
+.recentCommentsRight{
+	width: 70%;
+}
+.recentCommentsBodyShort,
+.brownLight{
+	color: #c26a30;
+}
+/*One Post main.onePost comments*/
+.writtenBy,
+.postPhotoGalery,
+.postVideoGalery{
+	border: 1px solid #dbdbdb;
+	padding: 0 30px;
+	margin: 50px 0;
+}
+.postPhotoGaleryOne{
+	width: 100px;
+	height: 100px;
+	margin: 10px 5px;
+}
+.postVideoGaleryOne{
+	width: 200px;
+	height: 200px;
+	margin: 10px;
+}
+.postPhotoGaleryOne:hover{	
+	border: 5px solid #c26a30;
+}
+.writtenBy h3,
+.postPhotoGalery h3,
+.postVideoGalery h3{
+	color: #432d1f;
+}
+.writtenByTopLeft{
+	width: 30%;
+	padding: 10px 20px 10px 0;
+}
+.writtenByTopRight{
+	width: 70%;
+}
+.writtenCommentOne{
+	padding-bottom: 20px;
+}
+
+.formLeaveComment{
+	padding: 60px 0;
+}
+.formLeaveComment input, 
+.formLeaveComment textarea,
+.contactRight input,
+.contactRight textarea,
+.formInscription input,
+.formIn{
+	width:100%;
+	margin: 5px 0;
+	padding: 5px;
+	border: none;
+	border: 1px solid #dbdbdb;
+	color: #c26a30;
+}
+.submitComment, 
+.submitSendMessage{
+	border: none;
+	text-transform: uppercase;
+	border-bottom: #432d1f 1px solid;
+	color: #432d1f;
+}
+
+
+/*Contact  main.contact*/
+.contactLeft{
+	width: 40%;
+	padding-right: 60px;
+}
+.contactRight{
+	width: 60%;
+}
+.contactInfoBox{
+	background-color: #432d1f;
+	color: white;
+	text-transform: uppercase;
+	padding: 20px 40px;
+	letter-spacing: 0.1rem;
+}
+
+
+/*Login main.login*/
+.loginLeft, .loginRight{
+	width: 40%;
+}
+
+
+/*Lesson main.lesson*/
+.coursDEOne{
+	margin: 10px 0;
+}
+.coursDEOneDate{
+	width: 20%;
+	text-transform: uppercase;
+}
+.coursDEOneDescription{
+	width: 70%;
+}
+.coursDEOneDescription>p{margin-top: 0;}
+.coursDEOneDescription>h3{margin-bottom: 0;}
+.lessonBottomLeft{
+	width: 40%;
+}
+.lessonBottomRight{
+	width: 55%;
+}
+.form-check{
+	padding-top: 10px;
+}
+
+
+/*Backend main.backend*/
+.backendLeft{
+	width: 10%;
+	padding: 0;
+}
+.flexColumn{
+	display: flex;
+	flex-direction: column;	
+}
+.backendLeftNav>a{
+	border: none;
+	padding: 40px 0;
+	border-top: 1px solid black;
+}
+.backendLeftNav :first-child{
+	border-top: none;
+}
+.backendMiddle{
+	width: 80%;
+}
+.backendMiddleLeft,
+.backendMiddleRight{
+	width: 50%; padding: 20px;
+}
+.backendRight{
+	width: 10%;
+	display: flex;
+	flex-direction: column;
+	background-color: black;
+}
+.backendBtn{
+	font-family: "RobotoCondensed-Bold";
+	background-color: white;
+	width: 100%;
+	padding: 40px;
+	text-transform: uppercase;
+	text-align: center;
+	align-items: center;
+}
+
+
+@media screen and (max-width: 1024px) {
+	.container{
+		width: 95%;
+	}
+	/*Header*/	
+	/*Footer*/
+	footer,
+	.contactFormTop,
+	.backendMiddle{
+		flex-direction: column;		
+	}
+	footer>div{
+		padding: 20px;
+	}
+	/* accueil */
+	.clubOfficersOne,
+	.backendMiddleLeft,
+	.backendMiddleRight{
+		width: 100%;
+	}
+	/*Contact  main.contact*/
+	.conntactLeft{
+		padding-right: 30px;
+	}
+
+	.contactInfoBox{
+		padding: 20px 40px;
+		letter-spacing: 0.1rem;
+	}
+	/*Backend*/
+	.backendLeft, .backendRight{width: 20%;}
+	
+
+	
+}
+
+@media screen and (max-width: 600px) {
+	.container{
+		width: 90%;
+	}
+	/*Header Footer*/
+	nav, 
+	footer,
+	.blog,
+	.login,
+	.contactBottom,
+	.accueilBottom,
+	.lessonBottom{
+		flex-direction: column;
+	}
+	nav{
+		font-size: 14px;
+	}
+	nav>a{
+		width: 100%;
+		padding: 20px;
+		border: white;
+		border-top: 1px black solid;
+	}
+	/*Accueil*/
+	.clubOfficersOne{
+		width: 100%;
+		border: 1px solid #dbdbdb;
+		margin: 0 20px 20px 0;
+	}
+
+	/*Blog*/
+	.blogLeft,
+	.blogRight,
+	.contactLeft,
+	.contactRight,
+	.accueilBottomLeft,
+	.accueilBottomRight,
+	.loginLeft,
+	.loginRight,
+	.lessonBottomLeft,
+	.lessonBottomRight{
+		width: 100%;
+		padding-right: 0;
+	}
+
+	/*Contact  main.contact*/
+	.contactInfoBox{
+		text-align: center;
+	}	
+}

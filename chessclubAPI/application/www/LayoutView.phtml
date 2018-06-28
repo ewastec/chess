@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Maisons-Alforts Echecs</title>
+
+    <!-- CSS FontAwesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <!-- CSS Perso -->
+    <link rel="stylesheet" href="<?= $wwwUrl ?>/css/normalize.css">
+    <link rel="stylesheet" href="<?= $wwwUrl ?>/css/base.css">
+    <link rel="stylesheet" href="<?= $wwwUrl ?>/css/style.css">
+    <!-- JS jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- JS Perso -->
+    <script src="<?= $wwwUrl ?>/js/utilities.js"></script>
+</head>
+<body>
+
+<!-- Header all pages -->
+<header>       
+    <nav class="container">
+        <a href="<?=$requestUrl ?>/"><img src="<?= $wwwUrl ?>/images/logo.png" alt=""></a>
+        <a href="<?=$requestUrl ?>/">Accueil</a>
+        <a href="<?=$requestUrl ?>/lessons">Cours d'echecs</a>
+        <a href="<?=$requestUrl ?>/blog">Blog</a>
+        <a href="<?=$requestUrl ?>/contact">Contacts</a>
+<?php $session = new UserSession; if($session->isAuthenticated() && ($session->getRole() == 'user')): ?>
+        <a href="<?=$requestUrl ?>/account">Account</a>  
+<?php elseif($session->isAuthenticated() && ($session->getRole() == 'admin')): ?>
+        <a href="<?=$requestUrl ?>/backend">Backend</a> 
+<?php else: ?>     
+        <a href="<?=$requestUrl ?>/login">Login</a>
+        <?php endif; ?>
+    </nav>
+</header>
+
+<main>
+    <!-- Affichage du template lié à la vue -->
+    <?php include $this->viewData['template'] ?>
+</main>
+
+<!-- Footer all pages -->
+<footer>
+    <div>
+        Cavalier de l’Espérance <br>
+        Cercle d’échecs J.J PAUR <br>
+        Maisons-Alfort
+    </div>
+    <div>
+        <i class="fas fa-home">
+        Ludothèque - Maison Pour Tous d’Alfort <br>
+        Square de l’artificier François Henri <br>
+        1 rue du Maréchal Juin <br>
+        94700 Maisons-Alfort
+        </i>
+    </div>
+    <div>
+        <i class="fab fa-facebook-square"></i> 
+        <i class="fab fa-twitter-square"></i> 
+        <i class="fab fa-linkedin"></i>
+    </div>
+</footer>
+
+<!-- Code principal JavaScript de l'application -->
+<script src="<?= $wwwUrl ?>/js/main.js"></script>
+
+</body>
+</html>

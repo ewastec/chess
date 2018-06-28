@@ -1,0 +1,24 @@
+<main class="container account">
+    <h1>account</h1>
+<form action="" method="POST">
+<button type="submit" name="logout" value="logout">Logout</button>
+</form>
+    
+    <div>
+        <h1>Welcome <?= $session->getFirstName();?> <?= $session->getLastName();?> !!!</h1>
+        <div>
+            <img src="<?= $wwwUrl ?>/uploads/usersPhoto/<?= $session->getUserPhoto(); ?>" alt="">
+        </div>
+        <div>
+        <div class="email">role : <?= $session->getRole(); ?></div>
+            <div class="email">email : <?= $session->getEmail(); ?></div>
+            <div class="tel">tel : <?= $session->getTel(); ?></div>
+            <?= $session->getUserId();?>
+            <form action="" method="post">
+            <button type="submit" name="editAccount" class="edit" value="<?= $session->getUserId();?>">edit my account</button>
+            </form>
+
+            <button type="submit" name="deleteAccount" class="delete" value="<?= $session->getUserId();?>">delete my account</button>
+        </div>
+    </div>
+</main>

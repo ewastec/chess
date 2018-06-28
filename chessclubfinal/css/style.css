@@ -15,12 +15,43 @@ body {
 img {
 	max-width: 100%;
 }
-main, nav{
+.container{
 	width: 90%;
 	margin: 0 auto;
 }
 header, footer{
 	font-family: "RobotoCondensed-Bold";
+}
+h1{font-size: 3.6rem;}
+h2{font-size: 2.8rem;}
+
+h1, 
+h2,
+.recentPostsDate, 
+.recentCommentsDate, 
+.recentPostsReadMore{
+	color: #432d1f;
+}
+
+nav,
+footer,
+.blog,
+.clubInformation,
+.recentCommentsTop,
+.writtenByTop,
+.contactBottom, 
+.contactFormTop,
+.accueilBottom,
+.OurHistoryOne,
+.clubOfficersAll,
+.postPhotoGaleryAll,
+.postVideoGaleryAll{
+	display: flex;
+}
+.clubOfficersAll,
+.postPhotoGaleryAll,
+.postVideoGaleryAll{
+	flex-wrap: wrap;
 }
 /*Header*/
 header{
@@ -28,83 +59,95 @@ header{
 	color: #666;
 	padding: 40px 0 10px 0;
 }
-nav{
-	background-color: white;
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-pack: justify;
-	    -ms-flex-pack: justify;
-	        justify-content: space-around;
-	-webkit-box-align: center;
-	    -ms-flex-align: center;
-	        align-items: center;
+nav, 
+footer{
+	justify-content: space-around;
+	align-items: center;
+}
+nav{background-color: white;}
+nav>a, 
+footer>div{
+	flex: 1;
+	text-align: center;
 }
 nav>a{
 	text-decoration: none;
 	color: black;
 	border-left: 1px black solid;
-	text-align: center;
-	flex: 1;
-	background-color: white;
 	padding: 67px 0;
 	vertical-align: middle;
 	text-transform: uppercase;	
 }
-nav>a:hover{
-	color: #c26a30;
-}
+nav>a:hover{color: #c26a30;}
 nav :first-child{
 	padding:0;
 	border: white;
 }
 
-
 /*Footer*/
 footer{
 	color: #ad7c5c;	
 	background-color: #f5ece6;
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-pack: justify;
-	    -ms-flex-pack: justify;
-	        justify-content: space-around;
-	-webkit-box-align: center;
-	    -ms-flex-align: center;
-	        align-items: center;
+	margin-top: 60px;
 }
-footer>div{
-	flex: 1;
-	text-align: center;
-	padding: 60px;
-}
-.fab{
-	font-size: 5rem;
-}
+footer>div{padding: 60px;}
+.fab{font-size: 5rem;}
 
 
 /*Accueil main.accueil*/
 .accueil img{
 	width: 100%;
 }
+.accueilBottomLeft{
+	width: 60%;
+	margin-right: 60px;
+}
+.accueilBottomRight{
+	width: 40%;
+}
+.clubInformation>h2{
+	flex-basis: 100%;
+}
+.clubInformationImg{
+	width: 40%;
+	margin-right: 30px;
+}
+.clubInformationDescription{
+	width: 60%;
+}
+.clubInformationDescription :first-child,
+.ourHistoryOneDescription :first-child{
+	margin: 0;
+}
+.ourHistoryOneDate{
+	padding-right: 20px;
+}
+
+.clubOfficersOne{
+	width: 46%;
+	border: 1px solid #dbdbdb;
+	margin: 0 20px 20px 0;
+}
+.clubOfficersDescription{
+	padding: 0 20px;
+}
+.usefulLinks>ol{
+	list-style-type: decimal;
+	padding: 20px;
+}
 
 
 /*Blog main.blog*/
-.blog{
-	display: flex;
-	color: #c26a30;
-}
-.blog .left{
+
+.blogLeft{
 	width: 70%;
 	padding-right: 60px;
 }
-.blog .right{
+.blogRight{
 	width: 30%;
 }
-.blog h2, .recentPostsDate, .recentCommentsDate, .recentPostsReadMore{
-	color: #432d1f;
-}
+.oneArticle{ text-align: justify; }
+
 .recentPostsReadMore{
 	text-transform: uppercase;
 	border-bottom: #432d1f 1px solid;	
@@ -115,7 +158,8 @@ footer>div{
 .postsListInfo{
 	margin: 20px 0;
 }
-.postsList, .recentPostsList{
+.postsList, 
+.recentPostsList{
 	margin-bottom: 70px;
 }
 .postsList>p{
@@ -125,44 +169,61 @@ footer>div{
 .fas{
 	padding: 10px 40px 10px 0;
 }
-.recentCommentsTop{
-	display: flex;
-}
 .recentCommentsLeft{
 	width: 30%;
 }
 .recentCommentsRight{
 	width: 70%;
 }
-.recentCommentsBodyShort{
-	color: #c26a30;
-}
-/*One Post main.onePost comments*/
-.writtenBy{
-	border: 1px solid #dbdbdb;
-	padding: 0 30px;
-}
-.writtenBy h3{
-	color: #432d1f;
-}
+.recentCommentsBodyShort,
 .brownLight{
 	color: #c26a30;
 }
-.writtenByTop{
-	display: flex;
+/*One Post main.onePost comments*/
+.writtenBy,
+.postPhotoGalery,
+.postVideoGalery{
+	border: 1px solid #dbdbdb;
+	padding: 0 30px;
+	margin: 50px 0;
+}
+.postPhotoGaleryOne
+{
+	width: 100px;
+	height: 100px;
+	margin: 10px 5px;
+}
+.postVideoGaleryOne{
+	width: 200px;
+	height: 200px;
+	margin: 10px;
+}
+.postPhotoGaleryOne:hover{	
+	border: 5px solid #c26a30;
+}
+.writtenBy h3,
+.postPhotoGalery h3,
+.postVideoGalery h3{
+	color: #432d1f;
 }
 .writtenByTopLeft{
 	width: 30%;
-	padding: 30px;
+	padding: 10px 20px 10px 0;
 }
 .writtenByTopRight{
 	width: 70%;
+}
+.writtenCommentOne{
+	padding-bottom: 20px;
 }
 
 .formLeaveComment{
 	padding: 60px 0;
 }
-.formLeaveComment input, .formLeaveComment textarea{
+.formLeaveComment input, 
+.formLeaveComment textarea,
+.contactRight input,
+.contactRight textarea{
 	width:100%;
 	margin: 5px 0;
 	padding: 5px;
@@ -170,29 +231,57 @@ footer>div{
 	border: 1px solid #dbdbdb;
 	color: #c26a30;
 }
-.submitComment{
+.submitComment, 
+.submitSendMessage{
 	border: none;
 	text-transform: uppercase;
 	border-bottom: #432d1f 1px solid;
 	color: #432d1f;
-
 }
 
+
+/*Contact  main.contact*/
+.contactLeft{
+	width: 40%;
+	padding-right: 60px;
+}
+.contactRight{
+	width: 60%;
+}
+.contactInfoBox{
+	background-color: #432d1f;
+	color: white;
+	text-transform: uppercase;
+	padding: 20px 40px;
+	letter-spacing: 0.1rem;
+}
+
+
 @media screen and (max-width: 1024px) {
-	main, nav{
-		width: 90%;
+	.container{
+		width: 95%;
 	}
-	/*Header*/
-	nav{
-		font-size: 11px;
-	}
+	/*Header*/	
 	/*Footer*/
-	footer{
-		flex-direction: column;
-		
+	footer,
+	.contactFormTop{
+		flex-direction: column;		
 	}
 	footer>div{
 		padding: 20px;
+	}
+	/* accueil */
+	.clubOfficersOne{
+		width: 100%;
+	}
+	/*Contact  main.contact*/
+	.conntactLeft{
+		padding-right: 30px;
+	}
+
+	.contactInfoBox{
+		padding: 20px 40px;
+		letter-spacing: 0.1rem;
 	}
 	
 
@@ -200,8 +289,15 @@ footer>div{
 }
 
 @media screen and (max-width: 600px) {
-	/*Header*/
-	nav, footer{
+	.container{
+		width: 90%;
+	}
+	/*Header Footer*/
+	nav, 
+	footer,
+	.blog,
+	.contactBottom,
+	.accueilBottom{
 		flex-direction: column;
 	}
 	nav{
@@ -213,10 +309,29 @@ footer>div{
 		border: white;
 		border-top: 1px black solid;
 	}
-	/*Footer*/
-	footer>div{
-		padding: 20px;
+	/*Accueil*/
+	.clubOfficersOne{
+		width: 100%;
+		border: 1px solid #dbdbdb;
+		margin: 0 20px 20px 0;
 	}
+
+	/*Blog*/
+	.blogLeft,
+	.blogRight,
+	.contactLeft,
+	.contactRight,
+	.accueilBottomLeft,
+	.accueilBottomRight{
+		width: 100%;
+		padding-right: 0;
+	}
+
+	/*Contact  main.contact*/
+	.contactInfoBox{
+		text-align: center;
+	}
+
 	
 	
 }

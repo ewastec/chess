@@ -1,0 +1,87 @@
+<main class="container blog">
+    <div class="blogLeft">
+    <?php if(isset($articles)): ?>
+    <?php foreach($articles as $article): ?>
+    
+    
+        <div class="postsList">
+            <h2><?= $article['title']; ?></h2>
+            <img src="<?= $wwwUrl ?>/uploads/articleMainPhoto/<?= $article['article_main_photo']; ?>" alt="">
+            <p><?= $article['body']; ?></p>
+            <a href="<?=$requestUrl ?>/blog/post" class="recentPostsReadMore">
+                <b>Read More</b> 
+            </a>
+            <div class="postsListInfo">
+                <i class="fas fa-calendar-alt">
+                    <span class="recentPostsDate">
+                        <b><?= $article['creation_date']; ?></b> 
+                    </span>
+                </i>
+                <i class="fas fa-user">
+                    <?= $article['author']; ?>
+                </i> <br>
+                <i class="fas fa-comments">
+                    no comments
+                </i>
+                <i class="fas fa-thumbs-up">
+                    <?= $article['likes']; ?>
+                </i>
+                <i class="fas fa-thumbs-down">
+                    <?= $article['nolikes']; ?>
+                </i>
+            </div>
+
+        </div>
+    <?php endforeach; ?>
+    <?php endif; ?>
+    </div>
+    <aside class="blogRight">
+        <div class="recentPostsList">
+            <h2>Recent Posts</h2>
+            <div class="recentPosts">
+                <div class="recentPostsLeft">
+                    <img src="<?= $wwwUrl ?>/images/echec001.jpeg" alt="">
+                </div>
+                <div class="recentPostsRight">
+                    <div class="recentPostsDate">
+                        <b>July 25, 2015 7:39 am</b> 
+                    </div>
+                    <div class="recentPostsTitle">
+                        <h3>Lorem ipsum dolor sit</h3> 
+                    </div>
+                    <div class="recentPostsBody">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic in illo commodi quibusdam veritatis harum a numquam distinctio amet nobis exercitationem
+                    </div>
+                    <a href="" class="recentPostsReadMore">
+                        <b> Read More </b>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="recentCommentsList">
+            <h2>Recent Comments</h2>
+            <div class="recentComments">
+                <div class="recentCommentsTop">
+                        <div class="recentCommentsLeft">
+                            <img src="<?= $wwwUrl ?>/images/logo.png" alt="">
+                        </div>
+                        <div class="recentCommentsRight">
+                            <div class="recentCommentsUsername">
+                                John Smith
+                            </div>
+                            <div class="recentCommentsDate">
+                                    <b>July 25, 2015 7:39 am</b> 
+                            </div>
+                        </div>
+                </div>
+                <div class="recentCommentsBottom">
+                    <a href="" class="recentCommentsBodyShort">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic in illo commodi quibusdam
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </aside>
+</main>

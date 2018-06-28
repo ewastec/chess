@@ -1,0 +1,41 @@
+<main class="backend">
+
+    <header class="backendLeft">
+        <nav class="backendLeftNav flexColumn">
+            <a class="flexColumn" href="<?=$requestUrl ?>/backend"><i class="fas fa-home"></i>Home</a>
+            <a class="flexColumn" href="<?=$requestUrl ?>/backend/posts"><i class="far fa-newspaper"></i>Posts</a>
+            <a class="flexColumn" href="<?=$requestUrl ?>/backend/users"><i class="fas fa-users"></i>Users</a>
+        </nav>
+    </header>
+
+
+    <div class="flex spaceBetween backendMiddle">
+        <div class="backendMiddleLeft">
+            <img src="<?= $wwwUrl ?>/uploads/usersPhoto/<?= $session->getUserPhoto(); ?>" alt="">
+        </div>
+        <div class="backendMiddleRight">
+            <h1>Welcome <?= $session->getFirstName();?> <?= $session->getLastName();?> !!!</h1>
+
+            <div>
+                <div class="email">role : <?= $session->getRole(); ?></div>
+                <div class="email">email : <?= $session->getEmail(); ?></div>
+                <div class="tel">tel : <?= $session->getTel(); ?></div>
+                <?= $session->getUserId();?>           
+            </div>
+        </div>        
+    </div>
+
+
+    <aside class="backendRight">
+        <form action="" method="POST">
+            <button class="flexColumn backendBtn" type="submit" name="logout" value="logout"><i class="fas fa-sign-out-alt"></i> Logout</button>
+        </form>
+        <form action="" method="post">
+            <button class="flexColumn backendBtn edit" type="submit" name="editAccount" value="<?= $session->getUserId();?>"><i class="fas fa-edit"></i> edit my account</button>
+        </form>
+        <form action="" method="post">
+            <button class="flexColumn backendBtn delete" type="submit" name="deleteAccount" value="<?= $session->getUserId();?>"> <i class="fas fa-trash-alt"></i> delete account</button>
+        </form>
+    </aside>
+    
+</main>

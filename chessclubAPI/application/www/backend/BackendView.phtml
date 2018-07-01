@@ -3,8 +3,19 @@
     <header class="backendLeft">
         <nav class="backendLeftNav flexColumn">
             <a class="flexColumn" href="<?=$requestUrl ?>/backend"><i class="fas fa-home"></i>Home</a>
-            <a class="flexColumn" href="<?=$requestUrl ?>/backend/posts"><i class="far fa-newspaper"></i>Posts</a>
-            <a class="flexColumn" href="<?=$requestUrl ?>/backend/users"><i class="fas fa-users"></i>Users</a>
+            <a class="flexColumn" href="<?=$requestUrl ?>/backend/posts">
+                <i class="far fa-newspaper"></i>
+                Posts
+                <div class="submenu">
+                    <a class="flexColumn" href="<?=$requestUrl ?>/backend/posts">all posts</a>
+                    <a class="flexColumn" href="<?=$requestUrl ?>/backend/posts/createpost">create post</a>                
+                </div>
+            </a>
+            <a class="flexColumn" href="<?=$requestUrl ?>/backend/users">
+            <i class="fas fa-users"></i>
+            Users
+            
+            </a>
         </nav>
     </header>
 

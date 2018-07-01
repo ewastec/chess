@@ -17,13 +17,25 @@ class BlogModel
 
     public function getAllArticles()
     {
-        $sql = 'SELECT * FROM articles';
+        $sql = 'SELECT * FROM articles ORDER BY creation_date  DESC';
         $form = [];
         $results = $this->db->query($sql, $form);         
         return $results; 
     }
 
-    public function updateArticle(){}
+    public function getOneArticle($id)
+    {
+        $sql ='SELECT * FROM articles WHERE id = ?';
+        $result = $this->db->queryOne($sql, $id);
+
+        return $result;
+    }
+
+    public function editArticle($form)
+    {
+        $sql = 'UPDATE `articles` SET `title`=?,`body`=?,`article_main_photo`=?,`author`=? WHERE id = ?';
+        $result = $this->db->executeSql($sql, $form); 
+    }
     public function deleteArticle(){}
 
 }

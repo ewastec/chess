@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="<?= $wwwUrl ?>/css/normalize.css">
     <link rel="stylesheet" href="<?= $wwwUrl ?>/css/base.css">
     <link rel="stylesheet" href="<?= $wwwUrl ?>/css/style.css">
+    <!-- CKEditor version 4 editor -->
+    <script src="<?= $wwwUrl ?>/ckeditor/ckeditor.js"></script>
     <!-- JS jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
@@ -37,10 +39,10 @@
     </nav>
 </header>
 
-<main>
+
     <!-- Affichage du template lié à la vue -->
     <?php include $this->viewData['template'] ?>
-</main>
+
 
 <!-- Footer all pages -->
 <footer>
@@ -63,6 +65,10 @@
         <i class="fab fa-linkedin"></i>
     </div>
 </footer>
+<!-- CKEditor -->
+<script>
+	CKEDITOR.replace( 'editor1' );
+</script>
 
 <!-- Code principal JavaScript de l'application -->
 <script src="<?= $wwwUrl ?>/js/main.js"></script>

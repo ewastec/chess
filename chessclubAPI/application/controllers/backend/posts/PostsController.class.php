@@ -10,6 +10,9 @@ class PostsController
     	 * L'argument $http est un objet permettant de faire des redirections etc.
     	 * L'argument $queryFields contient l'équivalent de $_GET en PHP natif.
     	 */
+		$blogmodel = new BlogModel();
+		$articles = $blogmodel->getAllArticles();
+		return ['articles' => $articles];
     }
 
     public function httpPostMethod(Http $http, array $formFields)
@@ -32,7 +35,7 @@ class PostsController
 			$form = [
 				$user_id,
 				$formFields['title'],
-				$formFields['body'],
+				$formFields['editor1'],
 				$likes,
 				$nolikes,
 				$pathInfo,

@@ -1,0 +1,84 @@
+<main class="backend backendPosts">
+
+    <header class="backendLeft">
+        <nav class="backendLeftNav flexColumn">
+            <a class="flexColumn" href="<?=$requestUrl ?>/backend"><i class="fas fa-home"></i>Home</a>
+            <a class="flexColumn" href="<?=$requestUrl ?>/backend/posts"><i class="far fa-newspaper"></i>Posts</a>
+            <a class="flexColumn" href="<?=$requestUrl ?>/backend/users"><i class="fas fa-users"></i>Users</a>
+        </nav>
+    </header>
+
+
+    <div class="backendMiddle onePost">
+    <?php if(isset($oneArticle)): ?>
+        <article class="postsList oneArticle">
+        
+                <h1><?= $oneArticle['title']; ?></h1>
+                <img src="<?= $wwwUrl ?>/uploads/articleMainPhoto/<?= $oneArticle['article_main_photo']; ?>" alt="">
+                <p><?= $oneArticle['body']; ?></p>
+                <div class="postsListInfo">
+                        <i class="fas fa-calendar-alt">
+                            <span class="recentPostsDate">
+                                <b><?= $oneArticle['creation_date']; ?></b> 
+                            </span>
+                        </i>
+                        <i class="fas fa-user">
+                        <?= $oneArticle['author']; ?>
+                        </i> <br>
+                        <i class="fas fa-comments">
+                            no comments
+                        </i>
+                        <i class="fas fa-thumbs-up"><?= $oneArticle['likes']; ?></i>
+                        <i class="fas fa-thumbs-down"><?= $oneArticle['nolikes']; ?></i>
+                </div>
+            
+            </article>
+
+            <article class="postPhotoGalery">
+                <h3>Photo Galery</h3>
+                <div class="postPhotoGaleryAll">
+                    <img class="postPhotoGaleryOne" src="<?= $wwwUrl ?>/images/logo.png" alt="">
+                    <img class="postPhotoGaleryOne" src="<?= $wwwUrl ?>/images/echec004.jpeg" alt="">
+                    <img class="postPhotoGaleryOne" src="<?= $wwwUrl ?>/images/echec002.jpeg" alt="">
+                    <img class="postPhotoGaleryOne" src="<?= $wwwUrl ?>/images/Logo.jpg" alt="">
+                    <img class="postPhotoGaleryOne" src="<?= $wwwUrl ?>/images/cinematheque.jpg" alt="">
+                    
+                </div>                   
+            </article>
+
+            <article class="postVideoGalery">
+                <h3>Video Galery</h3>
+                <div class="postVideoGaleryAll">
+                    <video class="postVideoGaleryOne" controls src="<?= $wwwUrl ?>/video/video.webm">
+                        Votre navigateur ne peut pas lire cette vidéo
+                    </video> 
+                    <video class="postVideoGaleryOne" controls src="<?= $wwwUrl ?>/video/video.webm">
+                        Votre navigateur ne peut pas lire cette vidéo
+                    </video> 
+                    <video class="postVideoGaleryOne" controls src="<?= $wwwUrl ?>/video/video.webm">
+                        Votre navigateur ne peut pas lire cette vidéo
+                    </video>                   
+                </div>                   
+            </article>
+            
+            <div class="backendMiddleButtons flex spaceAround">
+                <a class="green edit" href="<?=$requestUrl ?>/backend/posts/onepost/postedit?article_id=<?= $oneArticle['id']; ?>">Edit Article</a>
+                <a class="red delete" href="<?=$requestUrl ?>/backend">Delete Article</a>
+            </div>
+            <?php endif; ?>      
+    </div>
+
+
+    <aside class="backendRight">
+        <form action="" method="POST">
+            <button class="flexColumn backendBtn" type="submit" name="logout" value="logout"><i class="fas fa-sign-out-alt"></i> Logout</button>
+        </form>
+        <form action="" method="post">
+            <button class="flexColumn backendBtn edit" type="submit" name="editAccount" value="<?= $session->getUserId();?>"><i class="fas fa-edit"></i> edit my account</button>
+        </form>
+        <form action="" method="post">
+            <button class="flexColumn backendBtn delete" type="submit" name="deleteAccount" value="<?= $session->getUserId();?>"> <i class="fas fa-trash-alt"></i> delete account</button>
+        </form>
+    </aside>
+    
+</main>

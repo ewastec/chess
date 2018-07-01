@@ -1,0 +1,51 @@
+<main class="backend backendPosts">
+
+    <header class="backendLeft">
+        <nav class="backendLeftNav flexColumn">
+            <a class="flexColumn" href="<?=$requestUrl ?>/backend"><i class="fas fa-home"></i>Home</a>
+            <a class="flexColumn" href="<?=$requestUrl ?>/backend/posts"><i class="far fa-newspaper"></i>Posts</a>
+            <a class="flexColumn" href="<?=$requestUrl ?>/backend/users"><i class="fas fa-users"></i>Users</a>
+        </nav>
+    </header>
+
+
+    <div class="backendMiddle formLeaveComment onePost">
+        <h2>Edit Post</h2>
+        <?php if(isset($oneArticle)): ?>
+        <form action="" method="POST" enctype="multipart/form-data">
+            <div>
+                <input type="text" name="title" placeholder="<?= $oneArticle['title'] ?>">                   
+            </div>
+            <div>
+                <textarea name="editor1" id="editor1" rows="10" cols="80" ><?= $oneArticle['body'] ?></textarea>
+            </div>
+            <div>
+                <input type="text" name="author" placeholder="<?= $oneArticle['author'] ?>">
+            </div>
+            <div>
+                <input type="file" name="fileToUpload" id="fileToUpload" value="<?= $oneArticle['article_main_photo'] ?>">
+            </div>
+            <div>
+                <button type="submit" name="editPost" class="SubmitComment" value="<?= $oneArticle['id'] ?>">Edit article</button>
+            </div>
+        </form>  
+        <?php endif; ?>   
+
+        <h2>Edit Photo Galery</h2>    
+        <h2>Edit Video Galery</h2>          
+    </div>
+
+
+    <aside class="backendRight">
+        <form action="" method="POST">
+            <button class="flexColumn backendBtn" type="submit" name="logout" value="logout"><i class="fas fa-sign-out-alt"></i> Logout</button>
+        </form>
+        <form action="" method="post">
+            <button class="flexColumn backendBtn edit" type="submit" name="editAccount" value="<?= $session->getUserId();?>"><i class="fas fa-edit"></i> edit my account</button>
+        </form>
+        <form action="" method="post">
+            <button class="flexColumn backendBtn delete" type="submit" name="deleteAccount" value="<?= $session->getUserId();?>"> <i class="fas fa-trash-alt"></i> delete account</button>
+        </form>
+    </aside>
+    
+</main>

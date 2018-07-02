@@ -28,7 +28,7 @@
             </div>
         </article>
 
-        <?php endif; ?>
+         <?php endif; ?>
 
         <article class="postPhotoGalery">
             <h3>Photo Galery</h3>
@@ -69,59 +69,60 @@
             </div>                   
         </article>
 
+
+
         <article class="writtenComments">
             <h2>Comments</h2>
             <div class="writtenCommentsAll">
+
+                <?php if(isset($commentsForOneArticle)): ?>
+                <?php foreach($commentsForOneArticle as $comment): ?>
+                
+
                 <div class="writtenCommentOne">
                     <div class="writtenCommentOneBody">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id cupiditate sit cumque obcaecati? Ipsa maxime nam eius, expedita repellat quaerat modi tenetur doloribus quisquam magni odio cumque. Error, aut vero?</p>
+                        <p><?= $comment['body']; ?></p>
                     </div>
                     <div class="writtenCommentOneUsername">                            
                         <i class="fas fa-calendar-alt">
                             <span class="recentPostsDate">
-                                <b> July 25, 2015</b> 
+                                <b><?= $comment['creation_date']; ?></b> 
                             </span>
                         </i>
                         <i class="fas fa-user">
-                            John Smith
+                            <?= $comment['author']; ?>
                         </i> <br>
                     </div>                        
                 </div>
-                <div class="writtenCommentOne">
-                    <div class="writtenCommentOneBody">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id cupiditate sit cumque obcaecati? Ipsa maxime nam eius, expedita repellat quaerat modi tenetur doloribus quisquam magni odio cumque. Error, aut vero?</p>
-                    </div>
-                    <div class="writtenCommentOneUsername">                            
-                        <i class="fas fa-calendar-alt">
-                            <span class="recentPostsDate">
-                                <b> July 25, 2015</b> 
-                            </span>
-                        </i>
-                        <i class="fas fa-user">
-                            John Smith
-                        </i> <br>
-                    </div>                        
-                </div>
+
+                <?php endforeach; ?>
+                <?php endif; ?>
+
+                
             </div>                   
         </article>
 
         <div class="formLeaveComment">
             <h2>Leave a comment</h2>
-            <form action="">
+            <form action="" method="POST">
+                <?php if(isset($oneArticle)): ?>
+                    <input type="hidden" name="article_id" value="<?= $oneArticle['id']; ?>">
+                <?php endif; ?>
+                <?php if(isset($session)): ?>
+                    <input type="hidden" name="user_id" value="<?= $session->getUserId(); ?>">
+                <?php endif;?>
+               
                 <div>
-                    <input type="text" name="name" placeholder="Name*">
+                    <textarea name="body" cols="30" rows="10" placeholder="Your comment*"></textarea>
                 </div>
                 <div>
-                    <input type="email" name="email" placeholder="Email (will not be published)*">
-                </div>
-                <div>
-                    <textarea name="comment" cols="30" rows="10" placeholder="Your comment*"></textarea>
-                </div>
-                <div>
+                    
                     <input type="submit" class="SubmitComment" value="Submit Comment">
                 </div>
             </form>
         </div>
+
+       
 
     </section>
 

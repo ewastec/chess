@@ -11,7 +11,6 @@
                     <a class="flexColumn" href="<?=$requestUrl ?>/backend/posts/createpost">create post</a>                
                 </div>
             </a>
-            <a class="flexColumn" href="<?=$requestUrl ?>/backend/backcomments">Comments</a>
             <a class="flexColumn" href="<?=$requestUrl ?>/backend/users">
             <i class="fas fa-users"></i>
             Users
@@ -22,19 +21,43 @@
 
 
     <div class="flex spaceBetween backendMiddle">
-        <div class="backendMiddleLeft">
-            <img src="<?= $wwwUrl ?>/uploads/usersPhoto/<?= $session->getUserPhoto(); ?>" alt="">
-        </div>
-        <div class="backendMiddleRight">
-            <h1>Welcome <?= $session->getFirstName();?> <?= $session->getLastName();?> !!!</h1>
+        <h2>waiting comments</h2>
+            <div class="writtenCommentsAll">
 
-            <div>
-                <div class="email">role : <?= $session->getRole(); ?></div>
-                <div class="email">email : <?= $session->getEmail(); ?></div>
-                <div class="tel">tel : <?= $session->getTel(); ?></div>
-                <?= $session->getUserId();?>           
-            </div>
-        </div>        
+                <?php if(isset($allCommentsStatusWaiting)): ?>
+                <?php foreach($allCommentsStatusWaiting as $comment): ?>
+                
+
+                <div class="writtenCommentOne">
+                    <div class="writtenCommentOneBody">
+                        <p><?= $comment['body']; ?></p>
+                    </div>
+                    <div class="writtenCommentOneUsername">                            
+                        <i class="fas fa-calendar-alt">
+                            <span class="recentPostsDate">
+                                <b><?= $comment['creation_date']; ?></b> 
+                            </span>
+                        </i>
+                        <i class="fas fa-user">
+                            <?= $comment['author']; ?>
+                        </i> 
+                        <div><?= $comment['status']; ?></div>
+                    </div>
+                    <div>
+                        <form action="" method="post">
+                            <input type="hidden" name="comment_id" value="<?= $comment['id']; ?>">
+                            <button name="send" value="acceptComment">Accept comment</button>
+                        </form>
+                        
+                        <button>Don't accept</button>
+                    </div>                        
+                </div>
+
+                <?php endforeach; ?>
+                <?php endif; ?>
+
+                
+            </div>        
     </div>
 
 

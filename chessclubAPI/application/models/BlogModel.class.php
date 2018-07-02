@@ -23,6 +23,15 @@ class BlogModel
         return $results; 
     }
 
+    public function getAllArticlesAndComments()
+    {
+        //i dont know how to get number of comments ???
+        $sql = 'SELECT a.*, c.id
+        FROM articles AS a 
+        LEFT JOIN comments AS c
+        ON a.id = c.article_id';
+    }
+
     public function getOneArticle($id)
     {
         $sql ='SELECT * FROM articles WHERE id = ?';

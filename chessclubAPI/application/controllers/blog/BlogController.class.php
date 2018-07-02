@@ -10,9 +10,14 @@ class BlogController
     	 * L'argument $http est un objet permettant de faire des redirections etc.
     	 * L'argument $queryFields contient l'équivalent de $_GET en PHP natif.
     	 */
+
 		$blogmodel = new BlogModel();
+		$commentsmodel = new CommentsModel;
+
 		$articles = $blogmodel->getAllArticles();
-		return ['articles' => $articles];
+		$lastFiveComments = $commentsmodel->getLastFiveComments();
+
+		return ['articles' => $articles, 'lastFiveComments' =>$lastFiveComments];
     }
 
     public function httpPostMethod(Http $http, array $formFields)

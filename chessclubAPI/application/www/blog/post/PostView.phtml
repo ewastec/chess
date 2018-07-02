@@ -96,6 +96,12 @@
                 </div>
 
                 <?php endforeach; ?>
+                <?php else: ?>
+
+                <div class="writtenCommentOne"> 
+                   <p>no comments yet !!!</p>  
+                </div>
+
                 <?php endif; ?>
 
                 
@@ -115,6 +121,7 @@
                 <div>
                     <textarea name="body" cols="30" rows="10" placeholder="Your comment*"></textarea>
                 </div>
+                
                 <div>
                     
                     <input type="submit" class="SubmitComment" value="Submit Comment">
@@ -129,8 +136,10 @@
     <aside class="blogRight">
         <div class="recentPostsList">
             <h2>Recent Posts</h2>
+
             <?php if(isset($articles)): ?>
             <?php foreach($articles as $article): ?>
+
             <div class="recentPosts flex spaceBetween">
                 <div class="recentPostsLeft">
                     <img src="<?= $wwwUrl ?>/uploads/articleMainPhoto/<?= $article['article_main_photo']; ?>" alt="">
@@ -147,33 +156,42 @@
                     </a>
                 </div>
             </div>
+
             <?php endforeach; ?>
             <?php endif; ?>
+
         </div>
 
         <div class="recentCommentsList">
             <h2>Recent Comments</h2>
+
+            <?php if(isset($lastFiveComments)): ?>
+            <?php foreach($lastFiveComments as $last): ?>
+
             <div class="recentComments">
                 <div class="recentCommentsTop">
                     <div class="recentCommentsLeft">
-                            <img src="<?= $wwwUrl ?>/images/logo.png" alt="">
+                        <img src="<?= $wwwUrl ?>/images/logo.png" alt="">
                     </div>
                     <div class="recentCommentsRight">
                         <div class="recentCommentsUsername">
-                                John Smith
+                             <?= $last['author']; ?>
                         </div>
                         <div class="recentCommentsDate">
-                                    <b>July 25, 2015 7:39 am</b> 
+                            <b><?= $last['creation_date']; ?></b> 
                         </div>
                     </div>
                 </div>
                 <div class="recentCommentsBottom">
                     <a href="" class="recentCommentsBodyShort">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic in illo commodi quibusdam
+                        <?= $last['body']; ?>
                     </a>
                 </div>
             </div>
         </div>
+
+        <?php endforeach; ?>
+        <?php endif; ?>
 
     </aside>
 

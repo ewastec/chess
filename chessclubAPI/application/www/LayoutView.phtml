@@ -29,7 +29,7 @@
         <a href="<?=$requestUrl ?>/lessons">Cours d'echecs</a>
         <a href="<?=$requestUrl ?>/blog">Blog</a>
         <a href="<?=$requestUrl ?>/contact">Contacts</a>
-<?php $session = new UserSession; if($session->isAuthenticated() && ($session->getRole() == 'user')): ?>
+<?php if($session->isAuthenticated() && ($session->getRole() == 'user')): ?>
         <a href="<?=$requestUrl ?>/account">Account</a>  
 <?php elseif($session->isAuthenticated() && ($session->getRole() == 'admin')): ?>
         <a href="<?=$requestUrl ?>/backend">Backend</a> 

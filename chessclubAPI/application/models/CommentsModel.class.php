@@ -44,6 +44,21 @@ class CommentsModel
 
         return $result;
     }
+    public function getLastFiveComments()
+    {
+        $form = ['published'];
+        $sql = 'SELECT c.*, u.user_photo, CONCAT(u.first_name, " ", u.last_name) AS author 
+        FROM comments AS c
+        INNER JOIN users AS u
+        ON c.user_id = u.id 
+        WHERE c.status = ?
+        ORDER BY creation_date DESC 
+        LIMIT 5';
+        
+        $result = $this->db->query($sql, $form);
+
+        return $result;
+    }
 
     public function updateStatus($form)
     {
